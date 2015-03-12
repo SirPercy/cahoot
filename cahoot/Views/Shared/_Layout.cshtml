@@ -34,6 +34,7 @@
                     @Html.MenuItem("Klubben", "Index", "Team", "teaminfolink", new Dictionary<string,string> { { "Klubbinformation", "Team" }, {"Kalender", "Calendar"}, {"Medlemmar", "Member"}, {"Sponsorer", "Sponsors"} })
                     @Html.MenuItem("Tabeller/Statistik", "Index", "Standings", "standingslink", null)
                     @Html.MenuItem("Gästbok", "Index", "Gbook")
+                    @Html.MenuItem("Kontakta oss", "Index", "Contact")
                  </ul>
                 <ul class="nav navbar-right navbar-nav">
                     <li class="dropdown">
@@ -41,6 +42,8 @@
                         <ul class="dropdown-menu">
                         @if (!User.Identity.IsAuthenticated) {
                             <li><a href="@Url.Action("Login", "Member")">Logga in</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Create", "Member")">Registrera dig</a></li>
                         }
                         else {
                             <li><a href="@Url.Action("Logout", "Member")">Logga ut</a></li>
