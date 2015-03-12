@@ -57,6 +57,7 @@ namespace cahoot.Controllers
 
                 };
                 System.Web.HttpContext.Current.Response.Cookies.Add(cookie);
+                HttpRuntime.Cache.Remove("statitems");
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("_FORM", "Vänligen ange ett användarnamn eller lösenord.");

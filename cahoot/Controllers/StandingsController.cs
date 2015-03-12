@@ -107,11 +107,12 @@ namespace cahoot.Controllers
                     html.Append(string.Format("<li><a class=\"popup\" href=\"{0}\">{1}</a></li>", item.Link, item.Name));
                 }
 
-                if (User.Identity.Name == "Admin" || User.Identity.Name == "User")
+                if (User != null && (User.Identity.Name == "Admin" || User.Identity.Name == "User"))
                     html.Append(string.Format("<li><a href=\"{0}\">{1}</a></li>", Url.Action("Index"), "Hantera länkar"));
 
                 html.Append("</ul>");
                 html.Append("</div>");
+                cachedHtml = html.ToString();
                 HttpRuntime.Cache.Insert("statitems", html.ToString(), null, DateTime.Now.AddHours(4), TimeSpan.Zero,
                                          CacheItemPriority.Normal, null);
             }

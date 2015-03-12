@@ -1,7 +1,8 @@
 ﻿using System.Linq;
+using System.Web;
 using System.Web.Mvc;
-using cahoot.Models.Repository;
 using cahoot.Models.ViewModels;
+using System.Web.Security;
 
 namespace cahoot.Controllers
 {
@@ -31,5 +32,6 @@ namespace cahoot.Controllers
             _model.NewsEntries = news.ToList().OrderByDescending(i => i.Date).Take(7).ToList();
             return View(_model);
         }
+
     }
 }
