@@ -1,0 +1,73 @@
+﻿@model cahoot.Models.ViewModels.StandingsModel
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - Ändra tabellänkar";
+}
+
+@if (ViewBag.Type == cahoot.Code.Constants.XmlDataType.Standings)
+{
+    <h2>Ändra tabellänkar</h2>
+    using (Html.BeginForm("Edit", "Standings", new { type = ViewBag.Type }, FormMethod.Post, new { @class = "multiedit" }))
+    {
+       <table>
+            <tr><th>&nbsp;</th><th>Lag</th><th>Länk</th></tr>
+  
+        @for (var i = 0; i < Model.StandingLinks.Count(); i++)
+        {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Radera", "Delete", new { name = Model.StandingLinks[i].Name, type = cahoot.Code.Constants.XmlDataType.Standings })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.StandingLinks[i].Name, new { size = 10, @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.StandingLinks[i].Link, new { size = 50, @class = "form-control" })
+                    </td>
+                </tr>
+        }
+        </table>
+
+            <p>
+                <br />
+                <input type="submit" value="Spara" class="btn btn-primary" />
+            </p>
+    }
+}
+
+@if (ViewBag.Type == cahoot.Code.Constants.XmlDataType.Statistics)
+{
+    <h2>Ändra statistiklänkar</h2>
+
+    using (Html.BeginForm("Edit", "Standings", new {type = ViewBag.Type}, FormMethod.Post, new { @class = "multiedit" }))
+    {
+       <table>
+            <tr><th>&nbsp;</th><th>Lag</th><th>Länk</th></tr>
+  
+        @for (var i = 0; i < Model.StatisticsLinks.Count(); i++)
+        {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Radera", "Delete", new { name = Model.StatisticsLinks[i].Name, type = cahoot.Code.Constants.XmlDataType.Statistics })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.StatisticsLinks[i].Name, new { size = 10, @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.StatisticsLinks[i].Link, new { size = 50, @class = "form-control" })
+                    </td>
+                </tr>
+        }
+        </table>
+
+            <p>
+                <br />
+                <input type="submit" value="Spara" class="btn btn-primary" />
+            </p>
+    }
+}
+
+<div class="backlink">
+    @Html.ActionLink("Tillbaka till listan med länkar", "Index")
+</div>
+

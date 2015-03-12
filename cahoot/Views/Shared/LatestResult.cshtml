@@ -1,0 +1,21 @@
+﻿@model cahoot.Models.ViewModels.ViewModelBase
+@using cahoot.Code
+ 
+
+@if (Model.LatestResult.Count == 0)
+{
+    <p>Inga resultat denna säsong</p>
+
+}
+<ul class="latestresult">
+@foreach (var item in Model.LatestResult)
+{
+    
+    <li>
+        <p class="teaminfo">@item.Team-lag (@item.Location)</p>
+        <p><span>@cahoot.Code.Constants.TeamName</span><span class="result">@item.PointsHomeTeam</span></p>
+        <p><span>@item.Opponent</span><span class="result">@item.PointsAwayTeam</span></p>
+    </li>
+}
+</ul>
+

@@ -1,0 +1,53 @@
+﻿@model cahoot.Models.ViewModels.CalendarModel
+@using cahoot.Extensions;
+@using cahoot.Helpers
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Kalender";
+    var index =  !string.IsNullOrEmpty(Request.QueryString["monthindex"]) ? int.Parse(Request.QueryString["monthindex"]) : 0;
+    var monthInfo = DateTime.Now.AddMonths(index);
+}
+
+<h2>Kalender</h2>
+<p>
+    @if (User.Identity.Name == "User" || User.Identity.Name == "Admin")
+    {
+        @Html.ActionLink("Skapa ny kalenderhändelse", "Create")
+    }
+</p>
+<div id="calendar">
+    <div class="monthinfo">
+        @Html.ImageLink("Calendar", "Index", "/content/images/back.png", "förra månaden", new { monthindex = @index-1 }, new { @class = "prev" }, null)
+        <p>@monthInfo.ToString("MMMM").UppercaseFirst() @monthInfo.Year</p>
+        @Html.ImageLink("Calendar", "Index", "/content/images/forward.png", "nästa månaden", new { monthindex = @index+1 }, new { @class = "next" }, null)
+    </div>
+    <div>@Html.Calendar(Model.CalendarEntries, (DateTime)ViewBag.DateToShow)</div>
+</div>
+
+<ul class="calendarlist">
+    @foreach (var item in Model.TeamCalendarEvents)
+    {
+        <li>
+            <span class="date">@item.EventDate.ToString("d MMMM yyyy")</span>
+            <h3>@item.EventText</h3>
+            <p>@item.EventInfo</p>
+            <p>
+                @if (User.Identity.Name == "User" || User.Identity.Name == "Admin")
+                {
+                    @Html.ActionLink("Ändra", "Edit", new { id=@item.EventId }) <text> | </text>
+                    @Html.ActionLink("Ta bort", "Delete", new {id=@item.EventId})
+                }
+            </p>
+        </li>
+    }
+    @if (Model.TeamCalendarEvents.Count() == 0)
+    {
+        <li><p>Det finns inga kalenderhändelser denna månad.</p></li>
+    }
+</ul>
+
+@if (Request.QueryString["eventdate"] != null || Request.QueryString["newsid"] != null)
+{
+    <div class="backlink">
+        @Html.ActionLink("Visa aktuell månads kalenderhändelser", "Index")
+    </div>
+}

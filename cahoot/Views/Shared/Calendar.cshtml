@@ -1,0 +1,22 @@
+﻿@model cahoot.Models.ViewModels.ViewModelBase
+@using cahoot.Helpers
+
+@{
+    var yesterDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddMinutes(-1);
+}
+
+<ul class="calendar">
+    @foreach (var item in Model.CalendarEvents.Where(e => e.EventDate > yesterDay).Take(4))
+	{
+        <li>
+            @Html.ActionLink(@item.EventText, "Index", "Calendar", new { newsid = item.EventId }, null)
+            <br />
+            <span>Inträffar den @item.EventDate.ToString("d MMMM yyyy")</span>
+        </li>
+    }
+    @if (Model.CalendarEvents.Where(e => e.EventDate > yesterDay).Count() == 0)
+    {
+        <li>Det finns inga aktuella kalenderhändelser.</li>
+    }
+</ul>
+

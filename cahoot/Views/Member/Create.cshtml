@@ -1,0 +1,15 @@
+﻿@model cahoot.Models.ViewModels.MemberModel
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Registrera medlem";
+}
+
+
+    @if (User.Identity.Name == "Admin")
+    {
+        <h2>Registrera medlem</h2>
+    }
+    else
+    {<h2>Registrera dig</h2>}
+
+    @Html.Partial("MemberForm", Model)

@@ -1,0 +1,43 @@
+﻿@model cahoot.Models.ViewModels.CalendarModel
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.custom.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/DatePicker/ui.datepicker-sv.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#Calendar_EventDate").datepicker();
+    });
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+    <fieldset>
+       <div class="input-group">
+            @Html.HiddenFor(model => model.Calendar.EventId)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.Calendar.EventText, "Rubrik")
+            @Html.TextBoxFor(model => model.Calendar.EventText, new { @class = "form-control" })
+        </div>
+
+        <div class="input-group">
+            @Html.LabelFor(model => model.Calendar.EventInfo, "Beskrivande text")
+            @Html.TextAreaFor(model => model.Calendar.EventInfo, 10, 60, new { @class = "form-control" })
+        </div>
+
+        <div class="input-group">
+            @Html.LabelFor(model => model.Calendar.EventDate, "Datum")
+            @Html.TextBoxFor(model => model.Calendar.EventDate, new { @class = "form-control" })
+       </div>
+
+        <p>
+            <br />
+            <input type="submit" value="Spara" class="btn btn-primary" />
+        </p>
+    </fieldset>
+}
+
+<div class="backlink">
+    @Html.ActionLink("Tillbaka till kalendern", "Index")
+</div>

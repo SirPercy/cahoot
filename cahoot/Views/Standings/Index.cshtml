@@ -1,0 +1,49 @@
+﻿@model cahoot.Models.ViewModels.StandingsModel
+@using cahoot.Code
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Statistik";
+}
+
+<h2>Tabellänkar</h2>
+
+<p>
+    @if (User.Identity.Name == "Admin" || User.Identity.Name == "User")
+    {
+        @Html.ActionLink("Lägg till tabellänk", "Create", new { type = cahoot.Code.Constants.XmlDataType.Standings }) <text> | </text> @Html.ActionLink("Ändra tabellänkar", "Edit", new { type = Constants.XmlDataType.Standings })
+    }
+</p>
+
+@if (Model.StandingLinks.Count > 0)
+{
+    <ul class="statlinks">
+    @foreach (var item in Model.StandingLinks)
+    {
+        <li>
+            <a class="popup" href="@item.Link">@item.Name</a>
+        </li>
+
+    }
+
+    </ul>
+}
+
+<h2>Statistiklänkar</h2>
+
+<p>
+    @if (User.Identity.Name == "Admin" || User.Identity.Name == "User")
+    {
+        @Html.ActionLink("Lägg till statistiklänk", "Create", new { type = cahoot.Code.Constants.XmlDataType.Statistics }) <text> | </text> @Html.ActionLink("Ändra statistiklänkar", "Edit", new { type = cahoot.Code.Constants.XmlDataType.Statistics })
+    }
+</p>
+@if (Model.StatisticsLinks.Count > 0)
+{
+    <ul class="statlinks">
+    @foreach (var item in Model.StatisticsLinks)
+    {
+        <li>
+            <a class="popup" href="@item.Link">@item.Name</a>
+        </li>
+    }
+
+    </ul>
+}

@@ -1,0 +1,20 @@
+﻿@model cahoot.Models.ViewModels.NewsModel
+@using cahoot.Helpers
+@using cahoot.Extensions
+
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Nyheter";
+}
+
+    @foreach (var item in Model.NewsEntries)
+    {           
+        <h2>@item.Heading</h2>
+        <p class="post-info">Inlägg av @item.Writer den <span>@item.Date.ToString("d MMMM yyyy")</span></p>
+        <p>@Html.Raw(@item.Text.ReplaceLineBreaks())</p>
+        <p>
+            @Html.ActionLink("Tillbaka till nyhetslistan", "Index") 
+        </p>            
+    }
+
+

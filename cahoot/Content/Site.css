@@ -1,0 +1,270 @@
+﻿body{
+background-color: #eee
+}
+.navbar {
+background-color: #428bca;
+color: #ffffff;
+border: 0;
+border-radius: 0;
+}
+.navbar-nav > li > a {
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 1px solid #009ACD;
+}
+h3.highlight {
+    padding-top: 13px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #428bca;
+}
+
+.highlight {
+color: #428bca;
+}
+.navbar-nav > li > a.loggedin{color:yellow}
+.nav>li>a:hover, .nav>li>a:focus {
+    color:#333
+}
+.navbar-brand {
+    color:#fff;
+}
+.navbar-toggle{border:solid 1px #ccc}
+.navbar-toggle .icon-bar {
+    background:#fff;
+}
+.startmainbody {
+    padding-left: 27px;
+    padding-right: 27px;
+    min-height:2000px;
+    background:#fff;
+}
+.affix{position:static}
+
+.masthead .well{padding:5px}
+.masthead .lead{margin-left:20px}
+
+#sidebar ul, .resultpanel ul, .swebowlrss, .calendar, .latestresult, .topfive {list-style-type:none;padding-left:0} 
+.topfive .result {float:right}
+ul.topfive li:nth-child(1) {
+    font-weight: bold;
+}
+.swebowlrss li span {display:block}
+.svenskaspelbanner {text-align:center}
+.latestresult li p.teaminfo {
+    font-weight: bold;
+}
+.latestresult p{margin-bottom:0}
+.latestresult li, #calendar li {margin-bottom:10px}
+.latestresult li .result {
+    float:right;
+}
+.sponsorlist{margin-top:8px}
+#sponsors{height:60px;overflow:hidden;list-style-type:none;width:250px;padding-left:10px;padding-right:10px}
+#sponsors li{min-height:600px}
+.resultpanel{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color:#ddd9ae;
+    box-shadow: 5px 5px 5px #888888;
+    padding:15px;
+}
+.resultpanel h3.highlight{
+    color:#333;
+    border-bottom: 2px solid #333;
+    padding-top:0;
+}
+.more {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.author{font-style: italic;}
+
+
+.validation-summary-errors{
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    border: 1px solid #eed3d7;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.panel>.table-bordered, .panel>.table-responsive>.table-bordered {border:solid 1px #ddd;}
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+
+.sponsorlinks {
+    list-style-type: none;
+    padding-left: 0;
+}
+.sponsorlinks li {border-bottom:solid 1px #ccc}
+
+.small-input{width:220px}
+.subarea {margin-top:20px;border:solid 1px #f2f2f2;border-radius:4px;background:#f2f2f2;padding-left:10px;margin-bottom:10px}
+.subarea legend {margin-top:10px;margin-bottom:10px}
+
+input#uniquekey {
+    width: 18%;
+}
+form div strong{
+    background: #FEFAEF;
+    border: 1px solid #B9B563;
+    margin: 0px 0px 0.8em 0.5em;
+    padding: 0.2em 0.5em;
+}
+.uniquekey{display:block}
+
+/*calendar */
+#calendar {
+    width: 350px;
+}
+#calendar .monthinfo {
+    background: none repeat scroll 0 0 #2C76A6;
+    border-color: #308ABA #308ABA #246F97;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 0.3em 1em;
+    text-align: center;
+    position: relative;
+}
+#calendar .monthinfo .prev {
+    position: absolute;
+    left: 10px;
+}
+#calendar .monthinfo img {
+    background: none;
+    border: none;
+}
+#calendar .monthinfo p {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+#calendar .monthinfo .next {
+    position: absolute;
+    right: 10px;
+}
+#calendar table.cal {
+    padding-top: 0;
+    margin: 0;
+    width: 350px;
+}
+#calendar .cal td, #calendar .cal th {
+    background: url("images/thumb.jpg") repeat scroll 0 0 transparent;
+    box-shadow: 0 0 2px #AAAAAA;
+    -moz-box-shadow: 0 0 2px #AAAAAA;
+    -webkit-box-shadow: 0 0 2px #AAAAAA;
+    border-color: #ccc;
+    font-weight: bold;
+    color: #333;
+    text-align:center;
+}
+
+#calendar .cal th{
+    padding: 5px;
+}
+#calendar .cal td{
+    font-weight:normal;
+    padding: 5px;
+}
+#calendar .cal a:link, #calendar .cal a:visited {
+    text-decoration: none;
+    color: #FF409F;
+    outline: none;
+    font-weight:bold;
+}
+#calendar .cal td.today {
+    font-weight: bold;
+}
+
+ul.calendarlist {list-style-type:none;padding-left:0;margin-top:30px}
+ul.calendarlist li {border-bottom:solid 1px #f2f2f2;margin-top:10px}
+ul.calendarlist h3{margin-top:5px}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important ;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+  .resultpanel {font-size:12px}
+}
+
+
+@media (max-width:768px){
+    .sponsorlist{float:none!important;width:260px}
+    .masthead .well{width:100%}
+      .hidden-desktop {
+        display: inherit !important;
+        }
+      .visible-desktop {
+        display: none !important;
+      }
+      .visible-phone {
+        display: inherit !important;
+      }
+      .hidden-phone {
+        display: none !important;
+      }
+
+      #calendar {
+        width: 250px;
+    }
+    #calendar table.cal {
+     width: 250px;
+    }
+    #calendar .cal th{
+    padding: 2px;
+    }
+    #calendar .cal td{
+        font-weight:normal;
+        padding: 2px;
+    }
+ 
+}
+

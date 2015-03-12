@@ -1,0 +1,38 @@
+﻿@model cahoot.Models.ViewModels.SponsorsModel
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Sponsorer";
+}
+
+<h2>Sponsorer</h2>
+
+@if (Model.Sponsors.Count > 0)
+{
+    <p>
+    @if(User.Identity.Name == "Admin"){
+        @Html.ActionLink("Lägg till en sponsor", "Create")
+    }
+    </p>
+    
+    <ul class="sponsorlinks">
+    @foreach (var item in Model.Sponsors)
+    {
+        <li>
+            
+            @if (!string.IsNullOrEmpty(@item.LogotypeUrl))
+            {
+                 <img src="@item.LogotypeUrl" alt="@item.Name" />
+            }
+            <h3><a class="popup" href="@item.Link">@item.Name</a></h3>
+            <p>@item.TeaserText</p>
+            <p>
+                @if (User.Identity.Name == "Admin")
+               {
+                   @Html.ActionLink("Ta bort", "Delete", new { name = @item.Name })
+               }
+            </p>
+        </li>
+
+    }
+
+    </ul>
+}

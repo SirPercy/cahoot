@@ -1,0 +1,77 @@
+﻿@model cahoot.Models.ViewModels.ResultModel
+@using cahoot.Helpers
+@using System.Web.Helpers
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Resultat";
+}
+@{
+    var grid = new WebGrid(source: Model.MatchData, rowsPerPage: 10, pageFieldName:"pager");
+    var topresultmen = new WebGrid(source: Model.HigestResultMen, canPage:false, canSort:false);
+    var topresultwomen = new WebGrid(source: Model.HigestResultWomen, canPage: false, canSort: false);
+    var topresult = new WebGrid(source: Model.HigestResult, canPage: false, canSort: false);
+    var homeCity = cahoot.Code.Constants.TeamCity;
+}
+
+<h2>Resultattavla</h2>
+<p>
+    @if (User.Identity.Name == "Admin")
+    {
+        @Html.ActionLink("Skapa ny matchrapport", "Create")
+    }
+</p>
+<h3>Matchresultat</h3>
+        @grid.GetHtml(
+            tableStyle: "table table-striped table-bordered table-condensed",
+            displayHeader: false,
+            nextText: ">>",
+            previousText: "<<",
+            columns: grid.Columns(
+            grid.Column("Round", format: (item) => "Omg " + item.Round),
+                grid.Column("Location", format: (item) => item.Location.ToString().ToLower().StartsWith(homeCity) ? "(H)" : "(B)"),
+                grid.Column("Team", format: @<text>@item.Team-lag - @item.Opponent</text>, style: "teams"),
+                grid.Column("Result", format: @<text>@item.OurPoints - @item.OpponentPoints</text>, style: "result"),
+                grid.Column("Score", null, format: @<text>(@item.OurScore - @item.OpponentScore)</text>),
+                grid.Column("MatchId", null, format: @<text>
+                    @if(User.Identity.Name == "Admin"){
+                            @Html.ImageLink("Delete", "/content/images/delete.png", "tabort", new { matchid = item.MatchId })
+                    }
+                    </text>)
+            )
+        )
+    <h3>Säsongens bästa - Herrar</h3>
+       @topresultmen.GetHtml(
+            tableStyle: "table table-striped table-bordered table-condensed",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(  
+                    topresultmen.Column("Name", "Namn"),
+                    topresultmen.Column("Score", "Resultat", null, style:"alignright"),
+                    topresultmen.Column("Date", "Datum", format:(item) => item.Date.ToShortDateString()),
+                    topresultmen.Column("Location", "Plats")
+            )
+        )
+
+    <h3>Säsongens bästa - Damer</h3>
+       @topresultwomen.GetHtml(
+            tableStyle: "table table-striped table-bordered table-condensed",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(  
+                    topresultmen.Column("Name", "Namn"),
+                    topresultmen.Column("Score", "Resultat", null, style:"alignright"),
+                    topresultmen.Column("Date", "Datum", format:(item) => item.Date.ToShortDateString()),
+                    topresultmen.Column("Location", "Plats")
+            )
+        )
+
+    <h3>Klubbrekord</h3>
+       @topresult.GetHtml(
+            tableStyle: "table table-striped table-bordered table-condensed",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(  
+                    topresultmen.Column("Name", "Lag"),
+                    topresultmen.Column("Score", "Resultat", null, style:"alignright"),
+                    topresultmen.Column("Date", "Datum", format:(item) => item.Date.ToShortDateString()),
+                    topresultmen.Column("Location", "Plats")
+            )
+        )
+ 

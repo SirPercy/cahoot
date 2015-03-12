@@ -1,0 +1,83 @@
+﻿@model cahoot.Models.ViewModels.MemberModel
+@using cahoot.Helpers
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Medlemmar";
+}
+
+<h2>Medlemmar</h2>
+<p>
+    @if (User.Identity.Name == "Admin")
+    {
+        @Html.ActionLink("Lägg upp ny användare", "Create")
+    }
+    else if (!User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Jag vill registrera mig", "Create")
+    }
+</p>
+
+<table summary="Lista över medlemmar" class="table table-striped table-condensed table-bordered">
+    <thead>
+        <tr>
+            <th class="player">Spelare</th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <th>Telefon</th>
+            }
+            <th>Mejla</th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <th>&nbsp;</th>
+                if (User.Identity.Name == "Admin")
+                {
+                <th>&nbsp;</th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListMembers)
+        {
+            if (item.Status != "new")
+            {    
+            <tr>
+                    <td>@item.Name</td>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <td>@item.Phone</td> 
+                    }                   
+                    @if (@item.Email.Contains("noname"))
+                    {<td>*</td>}
+                    else if(!User.Identity.IsAuthenticated)
+                    {
+                        <td>@Html.ImageLink("Member", "Sendemail", "/content/images/email.png", "e-posta " + @item.Name, new { @class = "sendmail" })</td>
+                    }
+                    else{<td>@item.Email</td>}
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <td>@Html.ImageLink("Edit", "/content/images/edit.png", "Ändra", new { id = @item.MemberID })</td>
+                        if(User.Identity.Name == "Admin"){
+                            <td>@Html.ImageLink("Delete", "/content/images/delete.png", "Radera", new { id = @item.MemberID })</td>
+                        }
+                    }
+                </tr>
+            }
+            else if (item.Status == "new" && User.Identity.Name == "Admin")
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td> 
+                    <td>@item.Email</td>
+                    <td>@Html.ActionLink("Godkänn", "Edit", new { id = @item.MemberID })</td>
+                    <td>@Html.ImageLink("Delete", "/content/images/delete.png", "Radera", new { id = @item.MemberID })</td>
+
+                    
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+

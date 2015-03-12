@@ -1,0 +1,33 @@
+﻿@model cahoot.Models.ViewModels.StandingsModel
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + "- Skapa tabellänk";
+}
+
+<h2>Skapa ny länk</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+         <div class="input-group">
+            @Html.LabelFor(model => model.StandingItem.Name, "Namn")
+            @Html.TextBoxFor(model => model.StandingItem.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="input-group">
+            @Html.LabelFor(model => model.StandingItem.Link, "Länk")
+            @Html.TextBoxFor(model => model.StandingItem.Link, new { size = 70, @class = "form-control" })
+        </div>
+
+        <p>
+            <br />
+            <input type="submit" value="Spara" class="btn btn-primary" />
+        </p>
+}
+
+<div class="backlink">
+    @Html.ActionLink("Tillbaka till listan med länkar", "Index")
+</div>
+

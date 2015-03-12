@@ -1,0 +1,28 @@
+﻿@model cahoot.Models.ViewModels.GbookModel
+@using PagedList.Mvc;
+@using PagedList
+@using cahoot.Models;
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Gästbok";
+ }
+
+    <h2>Gästbok</h2>
+
+    <p>
+        @Html.ActionLink("Skriv i gästboken", "Create")
+    </p>
+    @foreach (var item in Model.PagedGuestBookEntries) {  
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">@item.Name</h3>
+            </div>
+            <div class="panel-body">
+                @item.Text
+                @if (User.Identity.Name == "Admin") {
+                    <p>@Html.ActionLink("Ta bort", "Delete", new { id = item.EntryId })</p>
+                }
+            </div>
+        </div>    
+    }
+    @Html.PagedListPager((IPagedList)Model.PagedGuestBookEntries, page => Url.Action("Index", new { page }))

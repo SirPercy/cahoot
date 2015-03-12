@@ -1,0 +1,28 @@
+﻿@model cahoot.Models.Member
+
+@using (Html.BeginForm("Login", "Member", FormMethod.Post, new { @class = "loginform" }))
+{
+    @Html.ValidationSummary("")
+    <fieldset>
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, "Användarnamn")
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PassWord, "Lösenord")
+            @Html.PasswordFor(model => model.PassWord, new { @class = "form-control" })
+        </div>
+        <p>
+            <input type="submit" value="Logga in" class="btn btn-primary" />
+        </p>
+    </fieldset>    
+    <br />
+    if (!User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Jag vill registrera mig", "Create")
+        <br />
+        <br />
+@*        @Html.ActionLink("Jag har glömt mitt lösenord", "Create")
+*@    }
+}

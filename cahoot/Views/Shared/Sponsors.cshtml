@@ -1,0 +1,13 @@
+﻿@model cahoot.Models.ViewModelBase
+@using cahoot.Helpers
+
+
+<ul>
+    @foreach (var item in Model.Sponsors)
+	{
+        <li>
+            <a href="@item.Link" class="popup" title="@item.Name">@item.Name</a> <br />
+            <span>@Html.PreviewText(@item.TeaserText, 100)</span>
+       </li>
+    }
+</ul>

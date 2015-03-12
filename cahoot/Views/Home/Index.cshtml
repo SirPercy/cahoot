@@ -1,0 +1,71 @@
+﻿@model cahoot.Models.ViewModels.HomeModel
+@using cahoot.Helpers
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Hem";
+}
+
+
+    @if (!Model.NewsEntries.Any()) {
+        <h1>Nyhetsflöde</h1>              
+        <div class="row">
+            <div class="col col-sm-8">
+                <p>Det finns inga nyheter att visa.</p>
+            </div> 
+            <div class="col col-sm-4 resultpanel">
+                <h3 class="highlight">Stjärnor <i class="glyphicon glyphicon-star pull-right"></i></h3>
+                @Html.Partial("TopFive")
+            </div>   
+        </div>     
+    }
+    else {
+        for (var i = 0; i < Model.NewsEntries.Count; i++) {
+            if (i == 0) {
+                <h2>@Html.ActionLink(@Model.NewsEntries[0].Heading, "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id })</h2>              
+                <div class="row">
+                    <div class="col col-sm-8">
+                        <p>
+                            <i class="glyphicon glyphicon-user"></i> <text> @Model.NewsEntries[0].Writer</text>
+                            <text>&nbsp;</text> <i class="glyphicon glyphicon-calendar"></i>
+                           <time datetime="@Model.NewsEntries[0].Date.ToString("d MMMM")">@Model.NewsEntries[0].Date.ToString("d MMMM")</time> 
+                        </p>
+                        <p>@Html.PreviewText(@Model.NewsEntries[0].Text, 600)</p>
+                        @if(Model.NewsEntries[0].Heading.StartsWith("Gästbok")){
+                            <p>@Html.ActionLink("Läs mer", "Index", "Gbook", new { id = @Model.NewsEntries[0].Id }, new { @class = "more" })</p>
+                        }
+                        else {
+                            <p>@Html.ActionLink("Läs mer", "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id }, new { @class = "more" })</p>
+                        }
+                    </div> 
+                    <div class="col col-sm-4 resultpanel hidden-phone">
+                        <h3 class="highlight">Stjärnor <i class="glyphicon glyphicon-star pull-right"></i></h3>
+                        @Html.Partial("TopFive") 
+                    </div>   
+                </div>    
+            }
+            else {
+                <h2>@Html.ActionLink(@Model.NewsEntries[i].Heading, "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id })</h2>    
+                <p>        
+                    <i class="glyphicon glyphicon-user"></i> <text> @Model.NewsEntries[i].Writer</text>
+                    <text>&nbsp;</text> <i class="glyphicon glyphicon-calendar"></i>
+                    <time datetime="@Model.NewsEntries[i].Date.ToString("d MMMM")">@Model.NewsEntries[i].Date.ToString("d MMMM")</time>       
+                </p>
+                <p>@Html.PreviewText(@Model.NewsEntries[i].Text, 300)</p>
+                if (Model.NewsEntries[i].Heading.StartsWith("Gästbok")) {
+                    <p>@Html.ActionLink("Läs mer", "Index", "Gbook", new { id = @Model.NewsEntries[i].Id }, new { @class = "more" })</p>
+                }
+                else {
+                    <p>@Html.ActionLink("Läs mer", "NewsEntry", "News", new { id = @Model.NewsEntries[i].Id }, new { @class = "more" })</p>
+                }
+                <hr/>
+            }
+        }
+    }
+    <p>@Html.ActionLink("Fler nyheter", "Index", "News", null, null)</p>
+
+@*@section Facebooklink {
+    <p id="facebook">
+        <a class="popup" href="https://www.facebook.com/254987575876">Följ oss på Facebook</a>
+    </p>
+}*@
+
+

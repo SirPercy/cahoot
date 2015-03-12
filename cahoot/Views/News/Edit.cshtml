@@ -1,0 +1,11 @@
+﻿@model cahoot.Models.ViewModels.NewsModel
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Ändra nyhetsinlägg";
+}
+
+<h2>Ändra nyhetsinlägg</h2>
+@Html.Partial("NewsForm", Model)
+
+
+

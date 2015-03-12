@@ -1,0 +1,16 @@
+﻿@model cahoot.Models.ViewModels.ViewModelBase
+           
+@if (Model.TopFive.Count == 0) {
+    <p>Inga resultat denna säsong</p>
+
+}
+<ul class="topfive">
+@foreach (var item in Model.TopFive)
+
+{
+    <li>
+        <span>@item.Name</span><span class="result">@item.Result</span>
+    </li>
+}
+</ul>
+

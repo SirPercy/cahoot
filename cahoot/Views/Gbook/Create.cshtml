@@ -1,0 +1,38 @@
+﻿@model cahoot.Models.ViewModels.GbookModel
+@using cahoot.Helpers
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Skapa gästboksinlägg";
+}
+
+
+<h2>Skriv i Gästboken</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+     @Html.ValidationSummary()
+    <fieldset>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gbook.Name, "Namn")
+            @Html.TextBoxFor(model => model.Gbook.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gbook.Text, "Inlägg")
+            @Html.TextAreaFor(model => model.Gbook.Text, 10, 70,  new { @class = "form-control" })
+        </div>
+
+       @Html.Captcha("Ange kontrollordet: ") 
+        <p>
+            <br />
+            <input type="submit" value="Spara" class="btn btn-primary" />
+        </p>
+    </fieldset>
+}
+
+<div class="backlink">
+    @Html.ActionLink("Tillbaka till Gästboken", "Index")
+</div>

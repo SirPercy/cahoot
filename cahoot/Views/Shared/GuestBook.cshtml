@@ -1,0 +1,12 @@
+﻿@model cahoot.Models.ViewModelBase
+@using cahoot.Helpers
+
+<ul id="guestbooklist">
+    @foreach (var item in Model.GuestBookEntries.Take(4))
+	{
+        <li>
+            @Html.ActionLink("Av " + @item.Name + " den " + @item.Date.ToString("d MMMM"), "Index", "Gbook", new { id = item.EntryId }, new { @class = "gbooklink" })
+            <p>@Html.GuestBookPreviewText(@item.Text, 80)</p>
+       </li>
+    }
+</ul>

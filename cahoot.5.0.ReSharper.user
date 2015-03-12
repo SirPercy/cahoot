@@ -1,0 +1,201 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="ServiceModel" priority="0" />
+      <Item value="Syndication" priority="0" />
+      <Item value="SyndicationItem`0" priority="0" />
+      <Item value="BundleConfig`0" priority="1" />
+      <Item value="new" priority="1" />
+      <Item value="BundleCollection" priority="0" />
+      <Item value="bool" priority="1" />
+      <Item value="isSubItem" priority="1" />
+      <Item value="DictionaryValueProvider" priority="0" />
+      <Item value="string" priority="2" />
+      <Item value="subItems" priority="3" />
+      <Item value="if" priority="0" />
+      <Item value="sb" priority="3" />
+      <Item value="linkText" priority="0" />
+      <Item value="foreach" priority="0" />
+      <Item value="subItem" priority="1" />
+      <Item value="bundles" priority="0" />
+      <Item value="ScriptBundle`0" priority="0" />
+      <Item value="className" priority="0" />
+      <Item value="GuestBook`0" priority="2" />
+      <Item value="var" priority="3" />
+      <Item value="news" priority="1" />
+      <Item value="base" priority="2" />
+      <Item value="GuestbookEntries" priority="1" />
+      <Item value="NewsModel`0" priority="0" />
+      <Item value="Models" priority="0" />
+      <Item value="News`0" priority="0" />
+      <Item value="Date" priority="0" />
+      <Item value="i" priority="7" />
+      <Item value="Heading" priority="0" />
+      <Item value="Text" priority="0" />
+      <Item value="Id" priority="0" />
+      <Item value="Writer" priority="0" />
+      <Item value="Repository" priority="0" />
+      <Item value="return" priority="2" />
+      <Item value="_model" priority="3" />
+      <Item value="Version`0" priority="0" />
+      <Item value="public" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="UIHint" priority="0" />
+      <Item value="DateTime`0" priority="0" />
+      <Item value="protected" priority="0" />
+      <Item value="void" priority="0" />
+      <Item value="XmlUtil`0" priority="0" />
+      <Item value="writer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@cahoot.BundleConfig">
+      <Item value="RegisterBundles`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Count" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="Append`0" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
+      <Item value="Key" priority="1" />
+      <Item value="Value" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Optimization.BundleCollection">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Controllers.BaseController">
+      <Item value="GuestbookEntries" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Concat`1" priority="0" />
+      <Item value="Select`2" priority="0" />
+      <Item value="OrderBy`2" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Models.GuestBook">
+      <Item value="Date" priority="1" />
+      <Item value="Name" priority="1" />
+      <Item value="Text" priority="0" />
+      <Item value="EntryId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Models.News">
+      <Item value="Date" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IOrderedEnumerable`1">
+      <Item value="Take`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Models.ViewModels.ViewModelBase">
+      <Item value="CalendarEvents" priority="0" />
+      <Item value="GuestbookEntries" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Models.ViewModels.ICalendarModel">
+      <Item value="CalendarEntries" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Models.ViewModels.IGbookModel">
+      <Item value="GuestBookEntries" priority="0" />
+      <Item value="GuestBookPosts" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:cahoot.Controllers.StandingsController">
+      <Item value="MenuItems`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.HtmlTextWriter">
+      <Item value="AddAttribute`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.UI.HtmlTextWriterAttribute">
+      <Item value="Class" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:News/f:Create.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:News/f:NewsForm.cshtml" caret="696" fromTop="11" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Shared/f:LatestResult.cshtml" caret="271" fromTop="13" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Controllers/f:TeamController.cs" caret="439" fromTop="17" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:News/f:Index.cshtml" caret="359" fromTop="3" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Team/f:Index.cshtml" caret="1556" fromTop="21" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:News/f:NewsEntry.cshtml" caret="179" fromTop="8" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Calendar/f:Index.cshtml" caret="1261" fromTop="8" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Calendar/f:Create.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Result/f:Create.cshtml" caret="3233" fromTop="4" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Calendar/f:CalendarForm.cshtml" caret="1497" fromTop="22" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Member/f:Index.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Sponsors/f:Index.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Models/f:Sponsor.cs" caret="250" fromTop="10" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="2575" fromTop="14" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Controllers/f:SponsorsController.cs" caret="1539" fromTop="18" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Controllers/f:BaseController.cs" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Scripts/f:global.js" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Controllers/f:StandingsController.cs" caret="3044" fromTop="13" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Sponsors/f:Create.cshtml" caret="833" fromTop="18" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Create.cshtml" caret="912" fromTop="23" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Edit.cshtml" caret="2483" fromTop="25" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Gbook/f:Create.cshtml" caret="983" fromTop="6" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Helpers/f:CaptchaHelper.cs" caret="648" fromTop="9" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Content/f:Site.css" caret="3527" fromTop="16" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Member/f:Register.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Member/f:Create.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Member/f:MemberEditForm.cshtml" caret="0" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Member/f:MemberForm.cshtml" caret="2049" fromTop="13" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Sponsors/f:Create.cshtml" caret="1110" fromTop="19" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Sponsors/f:Create.cshtml" caret="570" fromTop="11" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Sponsors/f:Create.cshtml" caret="859" fromTop="15" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Sponsors/f:Create.cshtml" caret="1364" fromTop="23" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="48" fromTop="0" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="545" fromTop="15" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="228" fromTop="9" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="790" fromTop="22" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="975" fromTop="9" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="1434" fromTop="12" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="1701" fromTop="17" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="1963" fromTop="14" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="2226" fromTop="23" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="2106" fromTop="18" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="1103" fromTop="14" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Code/f:XmlUtil.cs" caret="2575" fromTop="14" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Edit.cshtml" caret="1210" fromTop="23" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Edit.cshtml" caret="908" fromTop="13" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Edit.cshtml" caret="2103" fromTop="14" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Create.cshtml" caret="426" fromTop="11" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Create.cshtml" caret="984" fromTop="27" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Create.cshtml" caret="563" fromTop="14" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Create.cshtml" caret="912" fromTop="23" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Standings/f:Edit.cshtml" caret="2483" fromTop="25" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Content/f:Site.css" caret="3362" fromTop="10" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Content/f:Site.css" caret="3378" fromTop="10" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Gbook/f:Create.cshtml" caret="983" fromTop="6" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Helpers/f:CaptchaHelper.cs" caret="729" fromTop="10" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Content/f:Site.css" caret="3527" fromTop="16" />
+      <File id="FCF2FA3E-1406-4B5B-9972-003A0312C2D9/d:Views/d:Member/f:MemberForm.cshtml" caret="2049" fromTop="13" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

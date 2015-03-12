@@ -1,0 +1,10 @@
+﻿@model cahoot.Models.ViewModels.CalendarModel
+
+@{
+    ViewBag.Title = @cahoot.Code.Constants.TeamName + " - " + "Ändra kalenderpost";
+}
+
+<h2>Ändra kalenderpost</h2>
+
+@Html.Partial("CalendarForm", Model)
+

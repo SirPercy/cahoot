@@ -1,0 +1,12 @@
+﻿@model cahoot.Models.ViewModels.ViewModelBase
+           
+<ul class="swebowlrss">
+    @foreach (var item in Model.SwebowlRss)
+    {
+        <li>
+        <span>@item.PublishDate.ToString("yyyy-MM-dd HH:mm")</span>
+        <h4><a class="popup" href="@item.Id">@item.Title.Text</a></h4>
+        <p>@item.Summary.Text</p>
+        </li>
+    }
+</ul>
