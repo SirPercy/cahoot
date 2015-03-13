@@ -51,7 +51,7 @@
                     {<td>*</td>}
                     else if(!User.Identity.IsAuthenticated)
                     {
-                        <td>@Html.ImageLink("Member", "Sendemail", "/content/images/email.png", "e-posta " + @item.Name, new { @class = "sendmail" })</td>
+                        <td>Visas när du är inloggad</td>
                     }
                     else{<td>@item.Email</td>}
 
