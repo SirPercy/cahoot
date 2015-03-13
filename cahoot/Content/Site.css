@@ -45,16 +45,18 @@ color: #428bca;
 .masthead .lead{margin-left:20px}
 
 #sidebar ul, .resultpanel ul, .swebowlrss, .calendar, .latestresult, .topfive {list-style-type:none;padding-left:0} 
-#sidebar .calender li {
-    border-bottom: solid 1px #ccc;
+ul.calendar li {
+    border-bottom: solid 1px #eee;
     padding: 10px 0;
 }
+ul.calendar span {display:block}
 
 .topfive .result {float:right}
 ul.topfive li:nth-child(1) {
     font-weight: bold;
 }
 .swebowlrss li span {display:block}
+.swebowlrss h4{margin-top:0}
 .svenskaspelbanner {text-align:center}
 .latestresult li p.teaminfo {
     font-weight: bold;

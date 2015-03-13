@@ -8,11 +8,11 @@
 <ul class="calendar">
     @foreach (var item in Model.CalendarEvents.Where(e => e.EventDate > yesterDay).Take(4))
 	{
-        <li>
-            @Html.ActionLink(@item.EventText, "Index", "Calendar", new { newsid = item.EventId }, null)
-            <br />
-            <span>Inträffar den @item.EventDate.ToString("d MMMM yyyy")</span>
-        </li>
+	    <li>
+            <span>den @item.EventDate.ToString("d MMMM yyyy")</span>
+	        @Html.ActionLink(@item.EventText, "Index", "Calendar", new { newsid = item.EventId }, null)
+
+	    </li>
     }
     @if (Model.CalendarEvents.Where(e => e.EventDate > yesterDay).Count() == 0)
     {
