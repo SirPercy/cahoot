@@ -29,7 +29,7 @@ namespace cahoot.Controllers
                             Id = i.EntryId,
                             Writer = i.Name
                         }));
-            _model.NewsEntries = news.ToList().OrderByDescending(i => i.Date).Take(7).ToList();
+            _model.NewsEntries = news.ToList().OrderByDescending(i => i.Date).Take(6).ToList();
             return View(_model);
         }
 
