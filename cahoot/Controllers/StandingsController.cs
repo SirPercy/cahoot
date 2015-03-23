@@ -104,7 +104,7 @@ namespace cahoot.Controllers
 
                 foreach (var item in statitems)
                 {
-                    html.Append(string.Format("<li><a taget=\"_blank\" href=\"{0}\">{1}</a></li>", item.Link, item.Name));
+                    html.Append(string.Format("<li><a target=\"_blank\" href=\"{0}\">{1}</a></li>", item.Link, item.Name));
                 }
 
                 if (User != null && (User.Identity.Name == "Admin" || User.Identity.Name == "User"))
