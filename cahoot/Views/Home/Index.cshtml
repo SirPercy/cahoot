@@ -20,7 +20,7 @@
     else {
         for (var i = 0; i < Model.NewsEntries.Count; i++) {
             if (i == 0) {
-                <h2>@Html.ActionLink(@Model.NewsEntries[0].Heading, "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id })</h2>              
+                <h2>@Html.ActionLink(@Model.NewsEntries[0].Heading, "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id }, null)</h2>              
                 <div class="row">
                     <div class="col col-sm-8">
                         <p>
@@ -43,7 +43,7 @@
                 </div>    
             }
             else {
-                <h2>@Html.ActionLink(@Model.NewsEntries[i].Heading, "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id })</h2>    
+                <h2>@Html.ActionLink(@Model.NewsEntries[i].Heading, "NewsEntry", "News", new { id = @Model.NewsEntries[0].Id }, null)</h2>    
                 <p>        
                     <i class="glyphicon glyphicon-user"></i> <text> @Model.NewsEntries[i].Writer</text>
                     <text>&nbsp;</text> <i class="glyphicon glyphicon-calendar"></i>
@@ -62,10 +62,6 @@
     }
     <p>@Html.ActionLink("Fler nyheter", "Index", "News", null, null)</p>
 
-@*@section Facebooklink {
-    <p id="facebook">
-        <a class="popup" href="https://www.facebook.com/254987575876">Följ oss på Facebook</a>
-    </p>
-}*@
+}
 
 
