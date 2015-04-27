@@ -9,8 +9,6 @@ border-radius: 0;
 }
 .navbar-nav > li > a {
     color: #fff;
-    padding-left: 20px;
-    padding-right: 20px;
     border-left: 1px solid #009ACD;
 }
 h3.highlight {

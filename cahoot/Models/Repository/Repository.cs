@@ -248,7 +248,7 @@ namespace cahoot.Models.Repository
                      }
 
                  }
-                 HttpContext.Current.Cache.Insert("topfive", topFive, null, DateTime.Now.AddDays(1), TimeSpan.Zero, CacheItemPriority.Normal, null);
+                 HttpContext.Current.Cache.Insert("topfive", topFive, null, DateTime.Now.AddHours(1), TimeSpan.Zero, CacheItemPriority.Normal, null);
  
              }
              return topFive;
@@ -300,7 +300,7 @@ namespace cahoot.Models.Repository
                         throw new ApplicationException("Database error", ex);
                     }
                 }
-                HttpContext.Current.Cache.Insert("latestresult", latestResult, null, DateTime.Now.AddDays(1), TimeSpan.Zero, CacheItemPriority.Normal, null);
+                HttpContext.Current.Cache.Insert("latestresult", latestResult, null, DateTime.Now.AddHours(1), TimeSpan.Zero, CacheItemPriority.Normal, null);
             }
             return latestResult;
         }
