@@ -90,7 +90,7 @@ namespace cahoot.Controllers
         }
 
 
-        //[Authorize(Users = "Admin")]
+        [Authorize(Users = "Admin")]
         [HttpGet]
         public ActionResult Add()
         {
@@ -100,7 +100,7 @@ namespace cahoot.Controllers
             return View(model);
         }
 
-        //[Authorize(Users = "Admin")]
+        [Authorize(Users = "Admin")]
         [HttpPost]
         public ActionResult ViewAdded(MatchSchemeModel model)
         {
@@ -113,10 +113,10 @@ namespace cahoot.Controllers
                 var calendarItems = Repository.GetCalendarEvents(null);
                 foreach (var calendarItem in calendarItems)
                 {
-                    //if (calendarItem.EventInfo.ToLower().Contains("bk cahoot"))
-                    //{
+                    if (calendarItem.EventInfo.ToLower().Contains("bk cahoot"))
+                    {
                         Repository.DeleteCalendarEntry(calendarItem.EventId.GetValueOrDefault(0));
-                    //}
+                    }
                 }
                 foreach (var calendarItem in model.CalendarItems)
                 {
