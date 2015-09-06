@@ -20,19 +20,6 @@ namespace cahoot.Controllers
         }
         public ActionResult Index()
         {
-           //MatchDataCaller caller = new MatchDataCaller(Repository.GetMatchData);
-           //IAsyncResult result = caller.BeginInvoke(null, null);
-           //HighResultCaller highResultMenHandler = new HighResultCaller(Repository.GetScoring);
-           //HighResultCaller highResultWomenHandler = new HighResultCaller(Repository.GetScoring);
-           //HighResultCaller highResultHandler = new HighResultCaller(Repository.GetScoring);
-           //IAsyncResult highResultMen = highResultMenHandler.BeginInvoke("men", null, null);
-           //IAsyncResult highResultWomen = highResultWomenHandler.BeginInvoke("women", null, null);
-           //IAsyncResult highResult = highResultHandler.BeginInvoke("", null, null);
-
-           //_model.MatchData = caller.EndInvoke(result);
-           //_model.HigestResultMen = highResultMenHandler.EndInvoke(highResultMen);
-           //_model.HigestResultWomen = highResultWomenHandler.EndInvoke(highResultWomen);
-           //_model.HigestResult = highResultHandler.EndInvoke(highResult);
 
             _model.MatchData = Repository.GetMatchData();
             _model.HigestResultMen = Repository.GetScoring("men");

@@ -1,0 +1,32 @@
+﻿@model cahoot.Models.MatchSchemeModel
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Läs in spelschema</h2>
+
+@using (Html.BeginForm("ViewAdded", "Calendar"))
+{
+
+    <div class="input-group">
+        @Html.LabelFor(model => model.Url)
+        @Html.TextBoxFor(model => model.Url, new { @class = "form-control" })
+    </div>
+    <div class="input-group">
+        @Html.LabelFor(model => model.Team)
+        @Html.DropDownListFor(model => model.Team, Model.Teams, new { @class = "form-control small-input" })
+    </div>
+
+    <div class="input-group">
+        @Html.LabelFor(model => model.ClearFutrurePosts)
+        @Html.CheckBoxFor(model => model.ClearFutrurePosts)
+    </div>
+
+    <div class="input-group">
+        @Html.LabelFor(model => model.IsDebug)
+        @Html.CheckBoxFor(model => model.IsDebug)
+    </div>
+    <div class="input-group">
+        <input type="submit" value="Läs in" class="btn btn-primary" />
+    </div>
+}

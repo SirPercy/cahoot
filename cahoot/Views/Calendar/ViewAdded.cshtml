@@ -1,0 +1,41 @@
+﻿@model cahoot.Models.MatchSchemeModel
+
+@{
+    ViewBag.Title = "ViewAdded";
+}
+
+@if (!Model.IsDebug)
+{
+    <h2>Följande poster har skapats i kalendern.</h2>
+}
+else
+{
+    <h2>Följande poster kommer läggas till i kalendern</h2>
+    <br/>
+    using (Html.BeginForm("ViewAdded"))
+    {
+        <input type="submit" class="btn btn-primary" value="Skapa posterna"/> 
+        @Html.HiddenFor(model => model.Team)
+        @Html.HiddenFor(model => model.Url)
+        @Html.HiddenFor(model => model.ClearFutrurePosts)
+    }
+}
+<table class="table table-condensed table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Rubrik</th>
+            <th>Text</th>
+        </tr>
+    </thead>
+    @foreach (var post in @Model.CalendarItems)
+    {
+        <tr>
+            <td>@post.EventDate</td>
+            <td>@post.EventText</td>
+            <td>@post.EventInfo</td>
+        </tr>
+    }
+</table>
+
+

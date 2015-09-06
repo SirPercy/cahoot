@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
+using cahoot.Code;
+using cahoot.Models;
 using cahoot.Models.ViewModels;
 
 namespace cahoot.Controllers
@@ -64,6 +67,7 @@ namespace cahoot.Controllers
             _model.Calendar = base.Repository.GetCalendarEvents(id).ElementAt(0);
             return View(_model);
         }
+        
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Edit(CalendarModel calendarEntryToUpdate)
         {
@@ -76,6 +80,7 @@ namespace cahoot.Controllers
             ModelState.AddModelError("_FORM", "Något gick fel när posten skulle updateras.");
             return View(_model);
         }
+        
         [Authorize(Users = "User,Admin")]
         public ActionResult Delete(int id)
         {
@@ -83,6 +88,52 @@ namespace cahoot.Controllers
                 return RedirectToAction("Index");
             return View("Error", _model);
         }
+
+
+        //[Authorize(Users = "Admin")]
+        [HttpGet]
+        public ActionResult Add()
+        {
+            var model = new MatchSchemeModel();
+            model.Teams = Repository.GetTeams().Select(i => new SelectListItem { Text = i.Name, Value = i.Name });
+
+            return View(model);
+        }
+
+        //[Authorize(Users = "Admin")]
+        [HttpPost]
+        public ActionResult ViewAdded(MatchSchemeModel model)
+        {
+            //var url = "http://bits.swebowl.se/Matches/MatchScheme.aspx?DivisionId=12&SeasonId=2015&LeagueId=1&LevelId=3";
+            var extractor = new MatchSchemeExtractor { Team = model.Team, Url = model.Url };
+            model.CalendarItems = extractor.Extract();
+
+            if (!model.IsDebug && model.ClearFutrurePosts)
+            {
+                var calendarItems = Repository.GetCalendarEvents(null);
+                foreach (var calendarItem in calendarItems)
+                {
+                    //if (calendarItem.EventInfo.ToLower().Contains("bk cahoot"))
+                    //{
+                        Repository.DeleteCalendarEntry(calendarItem.EventId.GetValueOrDefault(0));
+                    //}
+                }
+                foreach (var calendarItem in model.CalendarItems)
+                {
+                    Repository.CreateCalendarEntry(new CalendarModel { Calendar = calendarItem });
+                }
+            }
+            else if (!model.IsDebug)
+            {
+                foreach (var calendarItem in model.CalendarItems)
+                {
+                    Repository.CreateCalendarEntry(new CalendarModel{Calendar = calendarItem});
+                }
+            }
+
+            return View(model);
+        }
+
 
     }
 }
