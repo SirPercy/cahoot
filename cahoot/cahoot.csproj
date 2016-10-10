@@ -329,6 +329,7 @@
     <None Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\cahoot.pubxml" />
     <None Include="Scripts\jquery-2.1.3.min.map" />
     <Content Include="Views\Calendar\CalendarForm.cshtml" />
     <Content Include="Views\Calendar\Create.cshtml" />

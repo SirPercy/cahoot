@@ -55,6 +55,7 @@ ul.topfive li:nth-child(1) {
 }
 .swebowlrss li span {display:block}
 .swebowlrss h4{margin-top:0}
+.swebowlrss img { width: 100%;margin-bottom: 5px}
 .svenskaspelbanner {text-align:center}
 .latestresult li p.teaminfo {
     font-weight: bold;

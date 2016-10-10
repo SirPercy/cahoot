@@ -5,8 +5,8 @@
     {
         <li>
         <span>@item.PublishDate.ToString("yyyy-MM-dd HH:mm")</span>
-        <h4><a class="popup" href="@item.Id">@item.Title.Text</a></h4>
-        <p>@item.Summary.Text</p>
+        <h4><a class="popup" href="@item.Links[0].Uri">@item.Title.Text</a></h4>
+        <p>@Html.Raw(item.Summary.Text)</p>
         </li>
     }
 </ul>
